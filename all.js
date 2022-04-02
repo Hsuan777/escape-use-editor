@@ -44,6 +44,7 @@ const quill = new Quill('#editor', {
   }
 });
 
+
 // https://stackoverflow.com/questions/59602182/quill-add-image-url-instead-of-uploading-it/63233326#63233326
 // use tooltip to upload image link
 function imageUploadHandler() {
