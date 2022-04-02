@@ -1,3 +1,5 @@
+Quill.register('modules/imageUploader', ImageUploader);
+
 const toolbarOptions = [
   [{ 'size': ['small', false, 'large', 'huge'] }],
   ['bold', 'italic', 'underline', 'strike'],        
@@ -27,6 +29,17 @@ const quill = new Quill('#editor', {
       handlers: {
         upload: imageUploadHandler
       }
+    },
+    imageUploader: {
+      upload: (file) => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve(
+              'https://images.unsplash.com/photo-1486427944299-d1955d23e34d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'
+            );
+          }, 3000);
+        });
+      },
     }
   }
 });
